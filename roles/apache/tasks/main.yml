@@ -23,13 +23,20 @@
 - name: disable 000-default site
   command: a2dissite 000-default
   args:
-    removes: /etc/apache2/sites-enables/000-default.conf
+    removes: /etc/apache2/sites-enabled/000-default.conf
+  notify:
+    - restart apache2
+
+- name: update /etc/apache2/ports.conf
+  template:
+    src=ports.conf.tpl
+    dest=/etc/apache2/ports.conf
   notify:
     - restart apache2
 
 - name: create vhost {{ domain }}
   template:
-    src=../templates/vhost.conf.tpl
+    src=vhost.conf.tpl
     dest=/etc/apache2/sites-available/{{ domain }}.conf
 
 - name: enable vhost {{ domain }}
