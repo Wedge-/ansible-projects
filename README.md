@@ -4,8 +4,9 @@
 wedge@groot:~ $ git pull https://github.com/Wedge-/ansible-projects.git
 wedge@groot:~ $ cd ansible-projects.git
 wedge@groot:~/ansible-projects.git $ tree .
-. 
+.
 ├── ansible.cfg
+├── apache.retry
 ├── apache.yml
 ├── hosts
 ├── README.md
@@ -19,11 +20,12 @@ wedge@groot:~/ansible-projects.git $ tree .
         ├── tasks
         │   └── main.yml
         ├── templates
+        │   ├── ports.conf.tpl
         │   └── vhost.conf.tpl
         └── vars
             └── main.yml
 
-8 directories, 9 files  
+8 directories, 11 files
 wedge@groot:~ $ ansible-playbook apache.yml
 
 PLAY [apache] ***************************************************************************************************************************************************************************************************
