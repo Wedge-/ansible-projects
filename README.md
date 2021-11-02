@@ -27,7 +27,7 @@ wedge@groot:~/ansible-projects $ tree .
 8 directories, 11 files
 ```
 
-Edit ```ansible.cfg``` and ```hosts``` file to fit your needs
+Edit ```ansible.cfg```, ```hosts``` and ```roles/apache/vars/main.yml``` file to fit your needs
 
 ```
 wedge@groot:~/ansible-projects $ ansible-playbook apache.yml
@@ -67,3 +67,5 @@ changed: [192.168.1.20]
 PLAY RECAP ******************************************************************************************************************************************************************************************************
 192.168.1.20               : ok=8    changed=9    unreachable=0    failed=0
 ```
+
+Your website is now available at ```http://192.168.1.20/groot.home```
