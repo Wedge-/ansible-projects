@@ -6,7 +6,6 @@ wedge@groot:~ $ cd ansible-projects
 wedge@groot:~/ansible-projects $ tree .
 .
 ├── ansible.cfg
-├── apache.retry
 ├── apache.yml
 ├── hosts
 ├── README.md
@@ -26,6 +25,11 @@ wedge@groot:~/ansible-projects $ tree .
             └── main.yml
 
 8 directories, 11 files
+```
+
+Edit ansible.cfg and hosts file to fit your needs
+
+```
 wedge@groot:~/ansible-projects $ ansible-playbook apache.yml
 
 PLAY [apache] ***************************************************************************************************************************************************************************************************
