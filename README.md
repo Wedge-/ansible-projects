@@ -27,7 +27,7 @@ wedge@groot:~/ansible-projects $ tree .
 8 directories, 11 files
 ```
 
-Edit ansible.cfg and hosts file to fit your needs
+Edit ```ansible.cfg``` and ```hosts``` file to fit your needs
 
 ```
 wedge@groot:~/ansible-projects $ ansible-playbook apache.yml
