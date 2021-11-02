@@ -1,0 +1,5 @@
+---
+http_port: 8080
+domain: groot.home
+git_url: groot.home
+git_port: 3000

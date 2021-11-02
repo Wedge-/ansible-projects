@@ -1,0 +1,47 @@
+---
+- name: install apache
+  apt: 
+    name=apache2 
+    update_cache=yes 
+    state=latest
+
+- name: create {{ domain }} directory
+  file:
+    path: /var/www/html/{{ domain }}
+    state: directory
+    mode: 0755
+    owner: www-data
+    group: www-data
+
+- name: enable mod_rewrite
+  apache2_module:
+    name=rewrite
+    state=present
+  notify:
+    - restart apache2
+
+- name: disable 000-default site
+  command: a2dissite 000-default
+  args:
+    removes: /etc/apache2/sites-enables/000-default.conf
+  notify:
+    - restart apache2
+
+- name: create vhost {{ domain }}
+  template:
+    src=../templates/vhost.conf.tpl
+    dest=/etc/apache2/sites-available/{{ domain }}.conf
+
+- name: enable vhost {{ domain }}
+  command: a2ensite {{ domain }}
+  args:
+   creates: /etc/apache2/sites-enabled/{{ domain }}.conf
+  notify:
+   - restart apache2
+
+- name: clone {{ domain }} from git
+  git:
+    repo=http://{{ git_url }}:{{ git_port }}/ansible/{{ domain }}.git
+    dest=/var/www/html/{{ domain }}
+    update=yes
+
