@@ -68,4 +68,4 @@ PLAY RECAP *********************************************************************
 192.168.1.20               : ok=8    changed=9    unreachable=0    failed=0
 ```
 
-Your website is now available at ```http://192.168.1.20/groot.home```
+Your website is now available at ```http://192.168.1.20:8080/```
