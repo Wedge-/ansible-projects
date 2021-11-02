@@ -1,10 +1,10 @@
 # HOW TO 
 
 ```shell
-wedge@groot:~$ git pull https://github.com/Wedge-/ansible-projects.git
-wedge@groot:~$ cd ansible-projects.git
-wedge@groot:~/ansible-projects.git$ tree .
-.
+wedge@groot:~ $ git pull https://github.com/Wedge-/ansible-projects.git
+wedge@groot:~ $ cd ansible-projects.git
+wedge@groot:~/ansible-projects.git $ tree .
+. 
 ├── ansible.cfg
 ├── apache.yml
 ├── hosts
@@ -24,5 +24,5 @@ wedge@groot:~/ansible-projects.git$ tree .
             └── main.yml
 
 8 directories, 9 files  
-wedge@groot:~$ ansible-playbook apache.yml
+wedge@groot:~ $ ansible-playbook apache.yml
 ```
